@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>おばけキッチン_ポートフォリオ.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<link rel="stylesheet" href="style.css">
+<h1 id="%E3%81%8A%E3%81%B0%E3%81%91%E3%82%AD%E3%83%83%E3%83%81%E3%83%B3-%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA">「おばけキッチン」　ポートフォリオ</h1>
+<h2 id="%E6%B2%B3%E5%8E%9F%E9%9B%BB%E5%AD%90%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E5%B0%82%E9%96%80%E5%AD%A6%E6%A0%A1-%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%82%BF%E3%83%BC%E7%A7%91-27%E5%8D%92">河原電子ビジネス専門学校　ゲームクリエイター科 27卒</h2>
+<h2 id="%E6%B0%8F%E5%90%8D%E4%B8%8B%E5%B2%A1-%E5%8D%97">氏名：下岡 南</h2>
+<h2 id="alt-text"><img src="title-2.png" alt="alt text"></h2>
+<h3 id="%E7%9B%AE%E6%AC%A1">目次</h3>
+<ul>
+<li><a href="#%E3%81%8A%E3%81%B0%E3%81%91%E3%82%AD%E3%83%83%E3%83%81%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA">「おばけキッチン」　ポートフォリオ</a>
+<ul>
+<li><a href="#%E6%B2%B3%E5%8E%9F%E9%9B%BB%E5%AD%90%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E5%B0%82%E9%96%80%E5%AD%A6%E6%A0%A1%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%82%BF%E3%83%BC%E7%A7%91-27%E5%8D%92">河原電子ビジネス専門学校　ゲームクリエイター科 27卒</a></li>
+<li><a href="#%E6%B0%8F%E5%90%8D%E4%B8%8B%E5%B2%A1-%E5%8D%97">氏名：下岡 南</a></li>
+<li><a href="#"></a>
+<ul>
+<li><a href="#%E7%9B%AE%E6%AC%A1">目次</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#1%E4%BD%9C%E5%93%81%E6%A6%82%E8%A6%81">1.作品概要</a></li>
+<li><a href="#2%E3%82%B2%E3%83%BC%E3%83%A0%E5%86%85%E5%AE%B9">2.ゲーム内容</a>
+<ul>
+<li><a href="#3%E6%93%8D%E4%BD%9C%E8%AA%AC%E6%98%8E">3.操作説明</a></li>
+<li><a href="#-1"></a></li>
+<li><a href="#4%E5%AE%9F%E8%A3%85%E3%81%97%E3%81%9F%E3%82%82%E3%81%AE">4.実装したもの</a>
+<ul>
+<li><a href="#%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%AE%E8%A8%AD%E8%A8%88">クラスの設計</a>
+<ul>
+<li><a href="#41-%E3%82%A2%E3%82%AF%E3%82%BF%E3%83%BC%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E5%9B%B3">4.1 アクターシステムのクラス図</a></li>
+<li><a href="#42-%E3%82%B7%E3%83%BC%E3%83%B3%E7%AE%A1%E7%90%86%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0">4.2 シーン管理システム</a></li>
+<li><a href="#43-%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E6%93%8D%E4%BD%9C%E3%81%A8%E3%82%B9%E3%83%86%E3%83%BC%E3%83%88%E3%83%9E%E3%82%B7%E3%83%B3">4.3 プレイヤー操作とステートマシン</a></li>
+<li><a href="#44-%E6%8B%A1%E5%BC%B5%E6%80%A7%E3%81%AE%E9%AB%98%E3%81%84ui">4.4 拡張性の高いUI</a></li>
+<li><a href="#45-%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E5%80%A4%E8%A8%88%E7%AE%97">4.5 ハッシュ値計算</a></li>
+<li><a href="#46-%E8%A1%9D%E7%AA%81%E5%88%A4%E5%AE%9A">4.6 衝突判定</a></li>
+<li><a href="#47-unity%E3%81%AE%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF%E6%8B%A1%E5%BC%B5">4.7 Unityのエディタ拡張</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#5%E3%81%BE%E3%81%A8%E3%82%81">5.まとめ</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="1%E4%BD%9C%E5%93%81%E6%A6%82%E8%A6%81">1.作品概要</h1>
+<ul>
+<li>タイトル
+<ul>
+<li>おばけキッチン</li>
+</ul>
+</li>
+<li>学校
+<ul>
+<li>河原電子ビジネス専門学校</li>
+</ul>
+</li>
+<li>制作人数
+<ul>
+<li>1人</li>
+</ul>
+</li>
+<li>製作期間
+<ul>
+<li>2025年9月~2025年12月(4ヵ月)</li>
+</ul>
+</li>
+<li>ゲームジャンル
+<ul>
+<li>協力型クッキングゲーム</li>
+</ul>
+</li>
+<li>プレイ人数
+<ul>
+<li>1~4人</li>
+</ul>
+</li>
+<li>対応ハード
+<ul>
+<li>PC (Windows 11)</li>
+<li>Xbox コントローラー</li>
+</ul>
+</li>
+<li>使用言語
+<ul>
+<li>C++</li>
+<li>C#</li>
+</ul>
+</li>
+<li>開発環境
+<ul>
+<li>エンジン
+<ul>
+<li>学校内製エンジン(DirectX12)</li>
+</ul>
+</li>
+<li>プログラム
+<ul>
+<li>Visual Studio 2022</li>
+</ul>
+</li>
+<li>３Dモデル
+<ul>
+<li>3ds MAX</li>
+</ul>
+</li>
+<li>エフェクト
+<ul>
+<li>Effeckseer</li>
+</ul>
+</li>
+<li>画像
+<ul>
+<li>Adobe Photoshop</li>
+</ul>
+</li>
+<li>バージョン管理
+<ul>
+<li>Git Hub</li>
+</ul>
+</li>
+<li>タスク管理
+<ul>
+<li>Notion</li>
+</ul>
+</li>
+<li>配置ツール
+<ul>
+<li>Unity</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GitHubURL
+<ul>
+<li><a href="https://github.com/shimooka-minami/ObakeKitchen" target="_blank">https://github.com/shimooka-minami/ObakeKitchen</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="2%E3%82%B2%E3%83%BC%E3%83%A0%E5%86%85%E5%AE%B9">2.ゲーム内容</h1>
+<p>１人から最大４人で遊べるわちゃわちゃ協力クッキングゲーム。<br>
+たくさん来る注文された料理を完成させよう！<br>
+お邪魔してくるいじわるなおばけもいるよ👻<br></p>
+<p>画像</p>
+<hr>
+<h2 id="3%E6%93%8D%E4%BD%9C%E8%AA%AC%E6%98%8E">3.操作説明</h2>
+<ul>
+<li>Aボタン：拾う・置く</li>
+<li>Bボタン：走る</li>
+<li>Xボタン：投げる・切る</li>
+<li>左スティック：移動</li>
+</ul>
+<h2 id="alt-text"><img src="sousa.png" alt="alt text"></h2>
+<h2 id="4%E5%AE%9F%E8%A3%85%E3%81%97%E3%81%9F%E3%82%82%E3%81%AE">4.実装したもの</h2>
+<h3 id="%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%AE%E8%A8%AD%E8%A8%88">クラスの設計</h3>
+<p>ゲーム内のあらゆるオブジェクトを管理しやすくするために、しっかりとルールを決めた継承を構築しています。<br>
+これによって、共通処理(描画、座標変更、衝突判定など)のコードの重複をさせず、新しいギミックやUIの追加を簡単にしています。</p>
+<h4 id="41-%E3%82%A2%E3%82%AF%E3%82%BF%E3%83%BC%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E5%9B%B3">4.1 アクターシステムのクラス図</h4>
+<p>ゲーム内の動的オブジェクトはすべてActorクラスを基底としています。<br></p>
+<p>Actor：位置情報(Transform)や当たり判定(Collider)を持つ基底クラス<br>
+Character：ステートマシンを持ち、移動やアクションを行う動的な存在<br>
+Gimmick：プレイヤーが動かすこと(Interact)可能な固定オブジェクトたち<br></p>
+<p><img src="sekkei1.png" alt="alt text"></p>
+<h4 id="42-%E3%82%B7%E3%83%BC%E3%83%B3%E7%AE%A1%E7%90%86%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0">4.2 シーン管理システム</h4>
+<p>IScene(基底クラス)に各ゲーム画面(タイトル、ゲーム、リザルト)のインターフェースを実装しており、SceneMangerによってまとめて動きを管理しています。<br></p>
+<p><img src="sekkei2.png" alt="alt text"></p>
+<h4 id="43-%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E6%93%8D%E4%BD%9C%E3%81%A8%E3%82%B9%E3%83%86%E3%83%BC%E3%83%88%E3%83%9E%E3%82%B7%E3%83%B3">4.3 プレイヤー操作とステートマシン</h4>
+<p>プレイヤー操作を「コントローラー入力・AIの行動」と「アクションの実行」を分けています。<br>
+PlayerControllerもしくはNPCControllerが入力を取得し、共通のStateMachineがそれぞれの行動を受け取って状態の遷移を行います。<br>
+これによって、プレイヤーとNPC(AI)が同じように動くようにしました。<br></p>
+<p>⭐AIの実装時にキャラクター自体の行動を変更する必要がなくなる
+　　<br>→デバックや拡張がしやすくなった！</p>
+<p>実装：PlayerStateを通して、待機・歩き・走る・料理などの状態をクラス化し、自由に切り替えができます。</p>
+<h4 id="44-%E6%8B%A1%E5%BC%B5%E6%80%A7%E3%81%AE%E9%AB%98%E3%81%84ui">4.4 拡張性の高いUI</h4>
+<p>UI要素もゲームオブジェクトと同様にUIBaseを基底とした継承を行っています。<br>
+これにより、UIアニメーションやUI表示の制御を管理しています。<br>
+また、UIを描くための下敷きとしてキャンバスを作成しています。<br>
+キャンバスを移動すると関連するUIも一緒に移動するため、アニメーションなどの演出面ですべてのUIにそれぞれ処理を追加する必要がなくなります。<br></p>
+<p>⭐キャンバスのみの適用で簡単にUIが追加できる！</p>
+<p>UIInteractIcon：プレイヤーがギミックに近づいたときに表示されるアイコン<br>
+UIScore / UITimer：ゲームの進行状況を反映するUI<br>
+Canvas：UI作成時の下敷き。Canvas内での位置変更等もできる<br></p>
+<p><img src="sekki3.png" alt="alt text"></p>
+<h4 id="45-%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E5%80%A4%E8%A8%88%E7%AE%97">4.5 ハッシュ値計算</h4>
+<p>文字列比較(ファイルパスやIDの検索など)に付随する余分な処理を減らすために、コンパイル時や実行時に文字列をハッシュ値に変換しています。<br>
+文字列比較を整数比較に置き換えることで、パフォーマンスを向上させることができます。<br></p>
+<h4 id="46-%E8%A1%9D%E7%AA%81%E5%88%A4%E5%AE%9A">4.6 衝突判定</h4>
+<p>ColliderとCollisionManagerにより、物理的な動きを管理しています。<br>
+GhostBody：物理的な判定はないが、透明な判定のみを検知します。<br>
+→例)キッチンのまな板の前に立つと「食材を切る」判定を行う</p>
+<h4 id="47-unity%E3%81%AE%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF%E6%8B%A1%E5%BC%B5">4.7 Unityのエディタ拡張</h4>
+<p>Unityエディタをステージの配置ツールとして使っています。<br>
+Unity上でオブジェクトを配置したり、ゴーストインタラクト判定の設定を行い、その内容をJsonファイルで書き出しています。<br>
+書き出したJsonファイルを内製エンジンに読み込むことで、Unityで配置した見た目通りのステージがそのままゲーム内に表示されます。<br></p>
+<p>⭐Unity内で画面を見ながら直感的にステージが作れる！<br>
+<img src="scene.png" alt="alt text"></p>
+<hr>
+<h2 id="5%E3%81%BE%E3%81%A8%E3%82%81">5.まとめ</h2>
+<p>今回の制作では、ゲームとして動くことだけでなく 「保守性」　「拡張性」　「パフォーマンスの向上」の3つに重点を置き、実践の場として開発しました。<br>
+オブジェクト指向設計を意識し、機能の追加(新しい調理器具やステージの追加など)にも対応できるようにしています。<br>
+<img src="beybey.png" alt="alt text"></p>
+
+</body>
+</html>

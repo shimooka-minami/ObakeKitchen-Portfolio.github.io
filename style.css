@@ -1,7 +1,7 @@
 body {
   /* font-family: "Georgia", "Times New Roman", serif; */
   background: linear-gradient(to bottom right, #fff8f0, #fce4ec);
-  background-image: url("https://github.com/shimooka-minami/ObakeKitchen-Portfolio.github.io/blob/main/background.png");
+  background-image: url("backGround.png");
   background-size: 100% 960px;
   color: #4b0082;
 }
